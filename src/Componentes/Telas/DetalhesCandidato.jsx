@@ -1,9 +1,4 @@
 import { Container, Button } from "react-bootstrap";
-import {
-    Row,
-    Col,
-    Form
-  } from "react-bootstrap";
 
 
 export default function DetalhesCandidato(props) {
@@ -20,23 +15,6 @@ export default function DetalhesCandidato(props) {
        }))
     }
     
-    function manipularSubmissao(evento) {
-        const form = evento.currentTarget;
-        if (form.checkValidity()){
-           props.setListaCandidatos(props.listaCandidatos((candidato) => {
-                var meuQuestionamentos = []
-                if (candidato.id === props.candidatoSelecionado.id) {
-                    meuQuestionamentos = candidato.questionamentos
-                    meuQuestionamentos.push()
-                    candidato.questionamentos = candidato.questionamentos
-                }
-           }))
-        }
-        evento.preventDefault();
-        evento.stopPropagation();
-    }
-    
-    const inputQuestionamento = document.getElementById("inputQuestionamento")
 
     return (
         <Container>
