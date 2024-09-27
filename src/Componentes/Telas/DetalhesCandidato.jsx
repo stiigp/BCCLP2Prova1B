@@ -8,6 +8,17 @@ import {
 
 export default function DetalhesCandidato(props) {
 
+    function registrarQuestionamento(stringQuestionamento) {
+        props.setListaCandidatos(props.listaCandidatos.map((candidato) => {
+            var meuQuestionamentos = []
+            if (candidato.id === props.candidatoSelecionado.id) {
+                meuQuestionamentos = candidato.questionamentos
+                meuQuestionamentos.push(stringQuestionamento)
+                candidato.questionamentos = candidato.questionamentos
+            }
+            return candidato
+       }))
+    }
     
     function manipularSubmissao(evento) {
         const form = evento.currentTarget;
@@ -50,11 +61,16 @@ export default function DetalhesCandidato(props) {
                         <h5>{questionamento}</h5>
                         )
                     })
-                }
-            <Form onSubmit={manipularSubmissao}>
+            }
+            <input type="text" id="inputQuestionamento"></input> <Button onClick={() => {
+                var stringQuestionamento = document.getElementById("inputQuestionamento").value
+                registrarQuestionamento(stringQuestionamento)
+                document.getElementById("inputQuestionamento").value = ""
+            }}>Registrar</Button>
+            {/* <Form onSubmit={manipularSubmissao}>
                 <Form.Control required type="text" id="descricao"></Form.Control>
                 <Button type="submit">Registrar</Button>
-            </Form>
+            </Form> */}
             <br/>
             
         <Button onClick={() => {props.setDetalharCandidato(false)}}>Voltar</Button>

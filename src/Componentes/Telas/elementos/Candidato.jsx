@@ -28,6 +28,7 @@ export default function Candidato(props) {
         ))
     }
 
+
     return (
         <Card style={{ width: '18rem' }}>
             <Card.Img variant="top" height="300" width="300" src={props.candidato.avatar} />
@@ -37,7 +38,7 @@ export default function Candidato(props) {
                     <p>{"Email: " + props.candidato.email}</p>
                     <p>{"Curtidas: " + props.candidato.curtidas}</p>
                     <p>{"Descurtidas: " + props.candidato.descurtidas}</p>
-                    <p>{"Questionamentos: 0"}</p>
+                    <p>{"Questionamentos: " + props.candidato.questionamentos.length}</p>
                 </Card.Text>
                 <Button variant="primary" onClick={() => {curtida(props.candidato)}}> {//Curtir
                                            }
