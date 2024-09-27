@@ -48,7 +48,7 @@ export const listaCandidatosImport = [
         "propostas":["maiores sed dolores similique labore et inventore et","quasi temporibus esse sunt id et","eos voluptatem aliquam","aliquid ratione corporis molestiae mollitia quia et magnam dolor"],
         "curtidas":0,
         "descurtidas":0,
-        "questionamentos":["Testando os questionamentos!", "Meu segundo questionamento", "porra"]
+        "questionamentos":["Testando os questionamentos!", "Meu segundo questionamento"]
     },
     {
         "id": 6,
